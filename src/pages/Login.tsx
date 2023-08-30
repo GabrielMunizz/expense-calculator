@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addEmail } from '../redux/actions';
 import { FormType, initialFormState } from '../utils/types';
+import loginImage from '../images/login2.png';
+import * as S from '../styles/styles';
 
 function Login() {
   const [form, setForm] = useState<FormType>(initialFormState);
@@ -16,29 +18,40 @@ function Login() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   return (
-    <form
-      onSubmit={ (event) => {
-        event.preventDefault();
-        dispatch(addEmail(form));
-        navigate('/carteira');
-      } }
-    >
-      <img src="" alt="" />
-      <input
-        data-testid="email-input"
-        type="email"
-        name="email"
-        onChange={ handleChange }
-      />
-      <input
-        data-testid="password-input"
-        type="password"
-        name="password"
-        onChange={ handleChange }
-      />
-      <button disabled={ !isValid }>Entrar</button>
-    </form>
+    <S.Main>
+      <S.Form
+        onSubmit={ (event) => {
+          event.preventDefault();
+          dispatch(addEmail(form));
+          navigate('/carteira');
+        } }
+      >
+        <h1>TrybeWallet</h1>
+        <img src={ loginImage } alt="Login" />
+        <div>
+          <h3>Login:</h3>
+          <input
+            data-testid="email-input"
+            type="email"
+            name="email"
+            onChange={ handleChange }
+            placeholder="E-mail"
+          />
+        </div>
+        <div>
+          <h3>Password:</h3>
+          <input
+            data-testid="password-input"
+            type="password"
+            name="password"
+            onChange={ handleChange }
+          />
+        </div>
+        <button disabled={ !isValid }>Entrar</button>
+      </S.Form>
+    </S.Main>
   );
 }
 
