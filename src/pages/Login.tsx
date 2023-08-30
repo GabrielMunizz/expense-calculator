@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { FormType, initialFormState } from '../utils/types';
 import { useDispatch } from 'react-redux';
-import { addEmail } from '../redux/actions';
 import { useNavigate } from 'react-router-dom';
+import { addEmail } from '../redux/actions';
+import { FormType, initialFormState } from '../utils/types';
 
 function Login() {
   const [form, setForm] = useState<FormType>(initialFormState);
@@ -18,26 +18,26 @@ function Login() {
   const dispatch = useDispatch();
   return (
     <form
-      onSubmit={(event) => {
+      onSubmit={ (event) => {
         event.preventDefault();
         dispatch(addEmail(form));
         navigate('/carteira');
-      }}
+      } }
     >
       <img src="" alt="" />
       <input
         data-testid="email-input"
         type="email"
         name="email"
-        onChange={handleChange}
+        onChange={ handleChange }
       />
       <input
         data-testid="password-input"
         type="password"
         name="password"
-        onChange={handleChange}
+        onChange={ handleChange }
       />
-      <button disabled={!isValid}>Entrar</button>
+      <button disabled={ !isValid }>Entrar</button>
     </form>
   );
 }
