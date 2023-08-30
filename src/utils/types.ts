@@ -1,9 +1,9 @@
-export type FormType = {  
-  email: string,
-  password: string,  
-}
+export type FormType = {
+  email: string;
+  password: string;
+};
 
-export const initialFormState = {  
+export const initialFormState = {
   email: '',
-  password: '',  
+  password: '',
 };

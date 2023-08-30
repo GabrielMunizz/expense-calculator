@@ -2,9 +2,7 @@
   "extends": "@trybe/eslint-config-frontend/typescript",
   "overrides": [
     {
-      "files": [
-        "src/tests/**/*.js"
-      ],
+      "files": ["src/tests/**/*.js"],
       "rules": {
         "max-len": [
           "error",
@@ -16,12 +14,8 @@
             "ignoreStrings": true
           }
         ],
-        "max-lines": [
-          "off"
-        ],
-        "no-magic-numbers": [
-          "off"
-        ]
+        "max-lines": ["off"],
+        "no-magic-numbers": ["off"]
       }
     }
   ]
