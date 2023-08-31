@@ -44,5 +44,46 @@ export const Form = styled.form`
       transform: scale(1.1);
       cursor: pointer;
     }
+
+    &:disabled {
+      background-color: ${(props) => props.theme.colors.photo_background};
+      border: 1px solid #fff;
+      transform: scale(1.0);
+    }
+  }
+`;
+
+export const Header = styled.header`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+  box-shadow: 2px 4px 8px ${(props) => props.theme.colors.main_text_color};
+  border-bottom: 2px solid ${(props) => props.theme.colors.main_text_color};
+  padding: 0 40px;
+
+  & img {
+    width: 80px;
+    border-radius: 50%;
+  }
+
+  .infoContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 550px;
+  }
+  .userInfoContainer, .expenseContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .expenseContainer h3 {
+    margin-left: 15px; 
   }
 `;

@@ -7,3 +7,7 @@ export const initialFormState = {
   email: '',
   password: '',
 };
+
+export type ReduxState = {
+  user: FormType,
+};

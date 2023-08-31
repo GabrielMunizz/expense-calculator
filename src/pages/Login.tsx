@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addEmail } from '../redux/actions';
 import { FormType, initialFormState } from '../utils/types';
-import loginImage from '../images/login2.png';
+import loginImage from '../images/pngwing.com.png';
 import * as S from '../styles/styles';
 
 function Login() {
