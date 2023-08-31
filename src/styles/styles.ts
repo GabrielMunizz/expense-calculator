@@ -64,6 +64,10 @@ export const Header = styled.header`
   border-bottom: 2px solid ${(props) => props.theme.colors.main_text_color};
   padding: 0 40px;
 
+  & h1 {
+    transform: translateX(100%);
+  }
+
   & img {
     width: 80px;
     border-radius: 50%;
@@ -76,6 +80,7 @@ export const Header = styled.header`
     align-items: center;
     width: 550px;
   }
+
   .userInfoContainer, .expenseContainer {
     display: flex;
     flex-direction: row;

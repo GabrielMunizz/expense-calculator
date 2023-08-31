@@ -1,5 +1,5 @@
 import { AnyAction } from 'redux';
-import { ADD_EXPENSE } from '../actions';
+import { ADD_EXPENSE, REQUEST_SUCCESSFULL } from '../actions';
 
 const INITIAL_WALLET = {
   currencies: [''], // array de string
@@ -16,14 +16,21 @@ const INITIAL_WALLET = {
   idToEdit: 0, // valor numérico que armazena o id da despesa que está sendo editada
 };
 
-export const wallet = (state = INITIAL_WALLET, action: AnyAction) => {
+const wallet = (state = INITIAL_WALLET, action: AnyAction) => {
   switch (action.type) {
     case ADD_EXPENSE:
       return {
         ...state,
         ...action.payload,
       };
+    case REQUEST_SUCCESSFULL:
+      return {
+        ...state,
+        currencies: action.payload,
+      };
     default:
       return state;
   }
 };
+
+export default wallet;

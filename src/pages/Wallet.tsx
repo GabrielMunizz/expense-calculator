@@ -1,12 +1,14 @@
 import Header from '../components/Header';
+import WalletForm from '../components/WalletForm';
+import * as S from '../styles/styles';
 
 function Wallet() {
   return (
     <>
       <Header />
-      <main>
-        <h1>Main</h1>
-      </main>
+      <S.Main>
+        <WalletForm />
+      </S.Main>
     </>
   );
 }

@@ -6,7 +6,7 @@ const INITIAL_STATE = {
   password: '',
 };
 
-export const user = (state = INITIAL_STATE, action: AnyAction) => {
+const user = (state = INITIAL_STATE, action: AnyAction) => {
   switch (action.type) {
     case ADD_EMAIL:
       return {
@@ -17,3 +17,5 @@ export const user = (state = INITIAL_STATE, action: AnyAction) => {
       return state;
   }
 };
+
+export default user;
