@@ -5,6 +5,11 @@ import { ReduxState } from '../utils/types';
 
 function Header() {
   const { user } = useSelector((state: ReduxState) => state);
+  const wallet = useSelector((state: ReduxState) => state.wallet);
+  const sumExpenses = wallet.expenses.reduce((total, expense) => {
+    total += Number(expense.exchangeRates[expense.currency].ask) * Number(expense.value);
+    return total;
+  }, 0);
   return (
     <S.Header>
       <img src={ trybeLogo } alt="Trybe Logo" />
@@ -16,7 +21,7 @@ function Header() {
         </div>
         <div className="expenseContainer">
           <h3>Despesa:</h3>
-          <h3 data-testid="total-field">0</h3>
+          <h3 data-testid="total-field">{ sumExpenses.toFixed(2) }</h3>
           <h3 data-testid="header-currency-field">BRL</h3>
         </div>
       </section>

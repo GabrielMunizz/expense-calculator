@@ -6,16 +6,30 @@ export type FormType = {
   password: string;
 };
 
+export type WalletFormType = {
+  id: number,
+  value: string,
+  currency: string,
+  method: string,
+  tag: string,
+  description: string,
+};
+
 export type WalletType = {
   currencies: [string], // array de string
   expenses: [{
-    id: object,
-    value: object,
-    currency: object,
-    method: object,
-    tag: object,
-    description: object,
-    exchangeRates: object,
+    id: number,
+    value: string,
+    currency: string,
+    method: string,
+    tag: string,
+    description: string,
+    exchangeRates: {
+      [key: string]: {
+        ask: string,
+        name: string,
+      }
+    },
   }],
   editor: boolean,
   idToEdit: number,
@@ -24,6 +38,15 @@ export type WalletType = {
 export const initialFormState = {
   email: '',
   password: '',
+};
+
+export const initialWalletForm = {
+  id: 0,
+  value: '',
+  currency: 'USD',
+  method: 'Dinheiro',
+  tag: 'Alimentação',
+  description: '',
 };
 
 export type ReduxState = {
