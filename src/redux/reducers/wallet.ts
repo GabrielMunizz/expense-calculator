@@ -1,5 +1,5 @@
 import { AnyAction } from 'redux';
-import { ADD_EXPENSE, REQUEST_SUCCESSFULL, ADD_EXCHANGE_RATE } from '../actions';
+import { ADD_EXPENSE, REQUEST_SUCCESSFULL } from '../actions';
 
 const INITIAL_WALLET = {
   currencies: [''], // array de string
