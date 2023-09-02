@@ -15,6 +15,21 @@ export type WalletFormType = {
   description: string,
 };
 
+export type FilteredWallet = {
+  id: number;
+  value: string;
+  currency: string;
+  method: string;
+  tag: string;
+  description: string;
+  exchangeRates: {
+    [key: string]: {
+      ask: string;
+      name: string;
+    };
+  };
+}[];
+
 export type WalletType = {
   currencies: [string], // array de string
   expenses: [{
